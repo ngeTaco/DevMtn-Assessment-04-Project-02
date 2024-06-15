@@ -5,8 +5,13 @@
     - Existing entries can be edited and deleted
 
 - Version 2
-    - Connect to MAL API
-        - https://myanimelist.net/apiconfig/references/api/v2
+    - Connect to API
+        - Options
+        - MyAnimeList API
+            - https://myanimelist.net/apiconfig/references/api/v2
+        - AniList API
+            - https://github.com/AniList/ApiV2-GraphQL-Docs
+            - https://anilist.github.io/ApiV2-GraphQL-Docs/
     Episode Selection Dropdown generated with API data
 
 - Version 3
