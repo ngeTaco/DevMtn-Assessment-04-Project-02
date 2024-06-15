@@ -1,0 +1,24 @@
+- Search Section
+	- Text Entry Field
+	- Proceed Search Button
+- Edit/Entry Section
+	- Poster Display
+	- Summary Text
+		- English Title
+		- Japanese Title
+		- Year
+		- Total Episodes
+		- Episode Select Dropdown
+	- Text Entry
+	- Cancel Button
+	- Confirm Button
+- Published Section
+	- Edit Entry Button
+	- Delete Entry Button
+	- Poster Display
+	- Summary Text
+		- English Title
+		- Japanese Title
+		- Year
+		- Episode of Total Episodes
+	- Text Display
