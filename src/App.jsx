@@ -26,9 +26,11 @@ function App() {
                 </div>
               </div>
             </div>
-            <p>
-              Where did the animation go?
-            </p>
+            <div className='App-Chosen-Text'>
+              <p>
+                Where did the animation go?
+              </p>
+            </div>
           </div>
           <button className='App-Button-Edit'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" style={{ width: '1.5rem', height: '1.5rem' }}>
@@ -55,9 +57,11 @@ function App() {
                 </div>
               </div>
             </div>
-            <p>
-            A real 2 for 1 special. I really like the part where the guy got punched with a metal fist.
-            </p>
+            <div className='App-Chosen-Text'>
+              <p>
+                A real 2 for 1 special. I really like the part where the guy got punched with a metal fist.
+              </p>
+            </div>
           </div>
           <button className='App-Button-Edit'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" style={{ width: '1.5rem', height: '1.5rem' }}>
