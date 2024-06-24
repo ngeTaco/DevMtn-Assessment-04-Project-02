@@ -8,6 +8,7 @@ export default function PublishedButtons(props) {
         <div>
             {isEditable ?
                 <button className='App-Button-Save' onClick={() => {
+                    props.editEntry(props.index, props.entryData)
                     setIsEditable(false)
                 }}>
                     <SaveIcon width='1.5rem' />

@@ -6,9 +6,10 @@ import PublishedText from './Published/PublishedText.jsx'
 
 export default function Published(props) {
 
+    const { id, blog_text, index } = props.publishedData
     const [isEditable, setIsEditable] = useState(false);
+    const [blogText, setBlogText] = useState(blog_text);
 
-    const { id, blog_text } = props.publishedData
     return (
         <article className='App-Episode-Log-Wrapper'>
             <div className='App-Episode-Log-Body'>
@@ -20,12 +21,16 @@ export default function Published(props) {
                     <PublishedText 
                     blog_text={blog_text}
                     isEditable={isEditable}
+                    blogState={{blogText, setBlogText}}
                     />
                 </div>
             </div>
             <PublishedButtons 
             isEditableState={{isEditable, setIsEditable}}
             deleteEntry={props.deleteEntry}
+            editEntry={props.editEntry}
+            entryData={{blog_text: blogText}}
+            index={index}
             id={id}
             />
         </article>

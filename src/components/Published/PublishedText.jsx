@@ -1,8 +1,7 @@
-import { useState } from "react"
 
 export default function PublishedText(props) {
 
-    const [blogText, setBlogText] = useState(props.blog_text);
+    const { blogText, setBlogText } = props.blogState
 
     return (
         <>
