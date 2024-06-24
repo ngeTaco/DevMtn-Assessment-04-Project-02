@@ -5,8 +5,8 @@
 
 .App-Whole {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 .App-Header {
   display: flex;
@@ -16,6 +16,20 @@
   border: 3px solid black;
   border-radius: 25px;
   text-align: center;
+  position: relative;
+  flex-direction: column;
+}
+
+.App-Search-Button-Proceed {
+  background-color: #b2f2bb;
+  border: 2px solid black;
+  border-radius: 10px;
+  position: relative;
+  left: 10rem;
+  bottom: 1rem;
+  margin-top: 1rem;
+  padding: .25rem 1rem .25rem 1rem;
+  font-size: large;
 }
 
 .App-Episode-Log-Wrapper {
@@ -36,6 +50,7 @@
 
 .App-Episode-Log-Body img {
   height: 10rem;
+  border: 1px solid black;
 }
 
 .App-Chosen-Header {
@@ -71,7 +86,8 @@
   border: 3px solid black;
   border-radius: 15px;
   margin-top: 1rem;
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(230, 230, 230);
+  width: 100%;
 }
 
 .App-Chosen-Text p {

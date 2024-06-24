@@ -1,7 +1,7 @@
 const entryData = {
     animeData: [
         {
-            id: 0,
+            id: 1,
             title_eng: 'ONE PIECE',
             title_jpn: 'ONE PIECE',
             season: 'Fall',
@@ -12,7 +12,7 @@ const entryData = {
             blog_text: 'this is such a great episode'
         },
         {
-            id: 0,
+            id: 2,
             title_eng: 'Neon Genesis Evangelion',
             title_jpn: 'Shin Seiki Evangelion',
             season: 'Fall',
@@ -23,7 +23,7 @@ const entryData = {
             blog_text: 'Where did the animation go?'
         },
         {
-            id: 0,
+            id: 3,
             title_eng: 'Fullmetal Alchemist: Brotherhood',
             title_jpn: 'Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST',
             season: 'Spring',
@@ -35,3 +35,5 @@ const entryData = {
         },
     ],
 };
+
+export default entryData;
