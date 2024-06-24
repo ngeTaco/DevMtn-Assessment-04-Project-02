@@ -94,11 +94,25 @@
   padding: .25rem 1rem .25rem 1rem; 
 }
 
+.App-Chosen-Text input {
+  width: 99%;
+  border-radius: 15px;
+}
+
 .App-Button-Edit {
   position: absolute;
   top: -1.5rem;
   right: 6rem;
   background-color: #a5d8ff;
+  border: 3px solid black;
+  border-radius: 100px;
+}
+
+.App-Button-Save {
+  position: absolute;
+  top: -1.5rem;
+  right: 6rem;
+  background-color: #b2f2bb;
   border: 3px solid black;
   border-radius: 100px;
 }
