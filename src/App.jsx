@@ -8,51 +8,70 @@ import axios from 'axios'
 
 function App() {
 
-  const [entryData, setEntryData] = useState({})
+  //FIXME: replacing phdata with an empty object breaks the whole site, I am missing a step here.
+  const [entryData, setEntryData] = useState(phData)
+
+  const getUserEntries = () => {
+    axios.get('/userEntries').then(res => {
+      setEntryData({...res.data})
+    })
+  }
 
   useEffect(() => {
-    axios.get('/userEntries').then(res => {
-      setEntryData(res.data)
-    })
+    getUserEntries()
   }, [])
 
   const deleteEntry = (id) => {
-    const newData = { ...entryData };
-    const index = newData.animeData.findIndex((entry) => {
-      return entry.id === id
-    });
-    newData.animeData.splice(index, 1)
-    setEntryData(newData)
+    // const newData = { ...entryData };
+    // const index = newData.animeData.findIndex((entry) => {
+    //   return entry.id === id
+    // });
+    // newData.animeData.splice(index, 1)
+    // setEntryData(newData)
+    axios.delete(`/userEntries/${id}`).then(res => {
+    })
   }
 
-  const addEntry = (id) => {
-    const newEntryData = { ...entryData };
+  // const addEntry = (id) => {
+  //   const newEntryData = { ...entryData };
 
-    const newId = generateId(newEntryData.animeData);
+  //   const newId = generateId(newEntryData.animeData);
 
-    newEntryData.animeData.push(
-      {
-        id: newId,
-        title_eng: 'Kaguya-sama: Love is War',
-        title_jpn: 'Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen',
-        season: 'Winter',
-        seasonYear: 2019,
-        episodes: 12,
-        coverImage: 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101921-VvdGQy1ZySYf.jpg',
-        selected_episode: 12,
-        blog_text: 'What a fun show with such a catchy opening and ending song. I really enjoyed it all the way through to the last episode'
-      }
-    )
-    setEntryData(newEntryData)
+  //   newEntryData.animeData.push(
+  //     {
+  //       id: newId,
+  //       title_eng: 'Kaguya-sama: Love is War',
+  //       title_jpn: 'Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen',
+  //       season: 'Winter',
+  //       seasonYear: 2019,
+  //       episodes: 12,
+  //       coverImage: 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101921-VvdGQy1ZySYf.jpg',
+  //       selected_episode: 12,
+  //       blog_text: 'What a fun show with such a catchy opening and ending song. I really enjoyed it all the way through to the last episode'
+  //     }
+  //   )
+  //   setEntryData(newEntryData)
+  // }
+  const addEntry = () => {
+      axios.post('/userEntries', newEntry).then(() => {
+        props.getUserEntries()
+      })
   }
 
+
+  // const editEntry = (index, newBlogText) => {
+
+  //   const newEntryData = { ...entryData };
+  //   const newBlogEntryData = Object.assign(newEntryData.animeData[index], newBlogText)
+  //   newEntryData.animeData[index] = newBlogEntryData
+  //   setEntryData(newEntryData)
+  // }
   const editEntry = (index, newBlogText) => {
 
-    const newEntryData = { ...entryData };
-    const newBlogEntryData = Object.assign(newEntryData.animeData[index], newBlogText)
-    newEntryData.animeData[index] = newBlogEntryData
-    setEntryData(newEntryData)
+    axios.put(`/userEntries/${index}`, {blog_text: newBlogText.blog_text})
+    .then(() => props.getUserEntries())
   }
+
 
   return (
     <section className='App-Whole'>
