@@ -1,13 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header.jsx'
 import Published from './components/Published.jsx'
 import phData from './data/userEntries.js'
 import generateId from './utils/generateIds.js'
+import axios from 'axios'
 
 function App() {
 
-  const [entryData, setEntryData] = useState(phData)
+  const [entryData, setEntryData] = useState({})
+
+  useEffect(() => {
+    axios.get('/userEntries').then(res => {
+      setEntryData(res.data)
+    })
+  }, [])
 
   const deleteEntry = (id) => {
     const newData = { ...entryData };
