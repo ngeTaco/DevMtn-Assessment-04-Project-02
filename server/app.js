@@ -33,7 +33,7 @@ app.post('/userEntries', (req, res) => {
     }
     userEntryData.animeData.push(newEntry)
 
-    res.status(200)
+    res.status(200).json({ message: 'Entry Added' })
 })
 
 app.put('/userEntries/:id', (req, res) => {
@@ -42,10 +42,11 @@ app.put('/userEntries/:id', (req, res) => {
     if (foundUserEntryId !== -1) {
         userEntryData.animeData[foundUserEntryId] = {
             ...userEntryData.animeData[foundUserEntryId], 
-            blog_text: req.body.blog_text}
-        return res.status(200)
+            blog_text: req.body.blog_text
+        }
+        return res.status(200).json({ message: 'Entry Successfully Edited' })
     }
-    return res.status(400)
+    return res.status(400).json({ message: 'Entry Not Edited' })
 })
 
 app.delete('/userEntries/:id', (req, res) => {
@@ -53,7 +54,7 @@ app.delete('/userEntries/:id', (req, res) => {
 
     if (foundUserEntryId !== -1) {
         userEntryData.animeData.splice(foundUserEntryId, 1)
-        return res.status(200)
+        return res.status(200).json({ message: 'Entry Successfully Deleted' })
     }
-    return res.status(400)
+    return res.status(400).json({ message: 'Entry Not Deleted' })
 })
