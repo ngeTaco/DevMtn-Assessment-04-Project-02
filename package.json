@@ -1,7 +1,7 @@
 {
   "name": "devmtn-assessment-04-project-02",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "nodemon server/app.js -w server/app.js -w server -w src",
