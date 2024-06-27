@@ -33,7 +33,7 @@ function App() {
   }
 
   const editEntry = (index, newBlogText) => {
-    axios.put(`/userEntries/${index}`, { blogText: newBlogText.blog_text })
+    axios.put(`/userEntries/${index}`, { blog_text: newBlogText.blog_text })
       .then(() => {
         getUserEntries()
       })

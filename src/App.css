@@ -20,6 +20,15 @@
   flex-direction: column;
 }
 
+.App-Header input {
+  width: 75%;
+  border-radius: 15px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 3px solid black;
+  padding: .75rem;
+}
+
 .App-Search-Button-Proceed {
   background-color: #b2f2bb;
   border: 2px solid black;
@@ -97,6 +106,7 @@
 .App-Chosen-Text input {
   width: 99%;
   border-radius: 15px;
+  padding: .75rem;
 }
 
 .App-Button-Edit {

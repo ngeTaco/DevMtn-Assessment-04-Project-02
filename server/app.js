@@ -9,10 +9,11 @@ const port = '8000'
 
 app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
 ViteExpress.config({ printViteDevServerHost: true })
 
-ViteExpress.listen(app, port, () => console.log(`Server is listening on port ${port}`))
+ViteExpress.listen(app, port, () => console.log(`Server is listening on http://localhost:${port}`))
 
 //API ROUTES
 app.get('/userEntries', (req, res) => {
@@ -43,7 +44,7 @@ app.put('/userEntries/:id', (req, res) => {
         userEntryData.animeData[foundUserEntryId] = {
             ...userEntryData.animeData[foundUserEntryId], 
             blog_text: req.body.blog_text
-        }
+        } 
         return res.status(200).json({ message: 'Entry Successfully Edited' })
     }
     return res.status(400).json({ message: 'Entry Not Edited' })
